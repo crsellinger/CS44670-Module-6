@@ -42,7 +42,7 @@ It may not need any changes.
 Files live in the HF repo.
 Go to (customize for your HF space):
 
-<https://huggingface.co/spaces/YOUR-USERNAME/YOUR-SPACE-NAME/tree/main>
+<https://huggingface.co/spaces/crsellinger/ml-penguins-predictor/tree/main>
 
 For example:
 
@@ -61,8 +61,8 @@ Then drag & drop from your repo (drag the whole folder from root):
 
 ## Public URLs
 
-- <https://YOUR-USERNAME-YOUR-SPACE-NAME.hf.space/predict>
-- <https://YOUR-USERNAME-YOUR-SPACE-NAME.hf.space/docs>
+- <https://crsellinger-ml-penguins-predictor.hf.space/predict>
+- <https://crsellinger-ml-penguins-predictor.hf.space/docs>
 
 For example:
 
