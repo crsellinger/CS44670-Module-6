@@ -64,8 +64,10 @@ log_header(LOG, "M06")
 
 # === Section 3. CONSTANTS AND CONFIGURATION ===
 
-# The path to the saved model artifact.
-MODEL_PATH: Final[Path] = Path("artifacts") / "model.joblib"
+# The path to the saved model artifact. Changed to absolute path to avoid issues with relative paths when running the service.
+MODEL_PATH: Final[Path] = (
+    Path(__file__).resolve().parent.parent.parent / "artifacts" / "model.joblib"
+)
 
 # The feature columns the model was trained on.
 # These must match exactly what was used during training.
