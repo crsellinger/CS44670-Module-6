@@ -61,8 +61,8 @@ Then drag & drop from your repo (drag the whole folder from root):
 
 ## Public URLs
 
-- [Global Semiconductor Predictor](https://crsellinger-ml-global-semiconductor-predictor.hf.space/predict)
-- <https://crsellinger-ml-global-semiconductor-predictor.hf.space/docs>
+- [Predictor](https://huggingface.co/spaces/crsellinger/ml-Global-Semiconductor-predictor)
+- [API Doc Test Area](https://crsellinger-ml-global-semiconductor-predictor.hf.space/docs)
 
 <!-- For example: -->
 <!-- Example links are erroring out, so commented them out to avoid link check error in GitHub>
