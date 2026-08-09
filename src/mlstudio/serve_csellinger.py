@@ -4,26 +4,26 @@ A FastAPI service that loads
 a trained penguin species classifier
 and exposes a /predict endpoint.
 
-Author: Denise Case
-Date: 2026-06
+Author: Caleb Sellinger
+Date: 2026-08-09
 
 Process:
     - Load a saved model from artifacts/.
-    - Accept a POST request with penguin measurements.
-    - Return the predicted species.
+    - Accept a POST request with fabricator measurements.
+    - Return the predicted fabricator type.
 
 Data Source:
-    - artifacts/model.joblib (trained in the notebook or app_case.py)
+    - artifacts/csellinger_model.joblib (trained in the notebook or app_csellinger.py)
 
 Terminal commands to run this service from the root project folder:
 
-uv run fastapi dev src/mlstudio/serve_case.py      # development (auto-reload)
-uv run fastapi run src/mlstudio/serve_case.py      # production
+uv run fastapi dev src/mlstudio/serve_csellinger.py      # development (auto-reload)
+uv run fastapi run src/mlstudio/serve_csellinger.py      # production
 
 - OR -
 
-uv run uvicorn mlstudio.serve_case:app --reload    # development (auto-reload)
-uv run uvicorn mlstudio.serve_case:app             # production
+uv run uvicorn mlstudio.serve_csellinger:app --reload    # development (auto-reload)
+uv run uvicorn mlstudio.serve_csellinger:app             # production
 
 Then send a request - open a new terminal and run
 
@@ -31,17 +31,13 @@ If macOS or Linux, use \ line continuation characters:
 
     curl -X POST http://127.0.0.1:8000/predict \
          -H "Content-Type: application/json" \
-         -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
+         -d '{"monthly_wafer_capacity": 1000, "process_node_nm": 14}'
 
 If Windows (PowerShell), use ` instead of \ for line continuation:
 
     curl -X POST http://127.0.0.1:8000/predict `
          -H "Content-Type: application/json" `
-         -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
-OBS:
-  Don't edit this file - it should remain a working example.
-  Copy it, rename it, and modify your copy if you want to experiment.
-  Include your command to run it in the docstring and in README.md.
+         -d '{"monthly_wafer_capacity": 1000, "process_node_nm": 14}'
 """
 
 # === Section 1. IMPORTS ===

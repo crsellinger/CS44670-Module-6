@@ -44,7 +44,7 @@ explain what is different and why the change matters.
 
 Was it easy, or surprisingly challenging and why do you think so?
 
-Mostly easy, just had to be meticulous with all the code changes and where everything lived. Hardest part I had was fixing the stratify error as the error came out as followed: "he minimum number of groups for any class cannot be less than 2. Classes with too few members are: ['memory_HBM_packaging']" and I didn't realize the data I was looking at. I decided not to go with a non-stratified split, such as a KFold, and took the top 4 fab_types to get a large enough sample size for each class.
+Mostly easy, just had to be meticulous with all the code changes and where everything lived. Hardest part I had was fixing the stratify error as the error came out as followed: "The minimum number of groups for any class cannot be less than 2. Classes with too few members are: ['memory_HBM_packaging']" and I didn't realize the data I was looking at. I decided not to go with a non-stratified split, such as a KFold, and took the top 4 fab_types to get a large enough sample size for each class.
 
 ## Phase 5. Custom Project
 
@@ -58,10 +58,10 @@ Describe the dataset, input, or example you started with.
 
 Include:
 
-- The original example dataset or input
-- The data source
-- Why you chose it, kept it, or changed it
-- Any important limitations or assumptions
+- The original example dataset or input: Global Semiconductor Industry 2010-2026
+- The data source: KaggleHub
+- Why you chose it, kept it, or changed it: Simple classification prediction served through Hugging Face
+- Any important limitations or assumptions:
 
 ### Example Model and Serving Approach
 
@@ -69,10 +69,20 @@ Describe the model being served and how it is deployed.
 
 Include:
 
-- What the model predicts and what inputs it expects
-- How the model was trained and saved
-- How the API receives a request and returns a prediction
-- Where the model is deployed (local, Render, Hugging Face, or other)
+- What the model predicts and what inputs it expects: predicts fab_type based on monthly_wafer_capacity and process_node_nm
+- How the model was trained and saved: loaded into pandas dataframe, trained on stratified test and train sets with Random Forest, saved with piplined joblib dump file, all in model_builder_csellinger.py
+- How the API receives a request and returns a prediction: Accepts POST request with JSON format of monthly_wafer_capacity and process_node_nm.
+
+Example:
+
+```json
+{
+  "monthly_wafer_capacity": 9000,
+  "process_node_nm": 20
+}
+```
+
+- Where the model is deployed (local, Render, Hugging Face, or other): Hugging Face. But, can be run locally with appropriate dependencies installed.
 
 ### Custom Application
 
@@ -80,9 +90,19 @@ Describe your custom dataset, model, or API changes.
 
 Include:
 
-- What you changed from the example (dataset, model, endpoint, or inputs)
-- Why you made those changes
-- How you verified that your custom model or API works correctly
+- What you changed from the example (dataset, model, endpoint, or inputs):
+
+  Added my Kaggle dataset, instead of using penguins. Created my serve, model builder, and notebook code with appropriate changes to feature cols, target columns, necessary imports, and new model path. Updated load_data to clean my new dataset, dropping rows with 0 values and using the top 4 fab_types since I some classes were to small to stratify as they only appeared once or twice. Updated Section 5 of notebook with new feature columns and test values.
+
+- Why you made those changes:
+
+  Wanted to get Hugging Face implementation running so others could use it, so a simple classification predictor sufficed.
+
+  **Note: Predictor mostly relies on process_node_nm, not monthly_wafer_capacity, if anyone wants to try it out. Training dataset can be found [HERE](https://www.kaggle.com/datasets/sergionefedov/global-semiconductor-industry-2010-2026/data?select=fab_capacity.csv)
+
+- How you verified that your custom model or API works correctly: Followed docs link [HERE](https://crsellinger-ml-global-semiconductor-predictor.hf.space/docs) -> click POST/predict section -> Try it out -> Type your prediction values -> Execute
+
+  You should see the prediction in the Responses section.
 
 ### Summary
 
@@ -90,10 +110,16 @@ Summarize your custom project.
 
 Include:
 
-- How you implemented your custom model or API
-- What results you got
-- What you learned
-- How well you exercised the skills covered in this project
-- What kinds of real problems you could apply these skills to in the future
+- How you implemented your custom model or API: Using FastAPI, loaded the model artifact, made a request class, and a predict function that uses the request class for the JSON input, and a prediction function using random forest
+- What results you got: A prediction output of one of four top classes in fab_type.
+- What you learned: How to implement a Hugging Face interface for my machine learning prediction that everyone can use.
+- How well you exercised the skills covered in this project: I think pretty well. There's still a lot I can do but I now know how to process a pipeline to build and serve a machine learning model.
+- What kinds of real problems you could apply these skills to in the future: This would be a great use for my non-profit organization to predict outcomes for new campaigns. Different development officers can use something like this to see possible outcomes for new campaigns or estimate donations for fund events.
 
 Display at least one image or screenshot showing your work.
+
+![API Documentation Test](images/image.png)
+
+![Web Page Test](images/image2.png)
+
+![Web Page Test 2](images/image3.png)

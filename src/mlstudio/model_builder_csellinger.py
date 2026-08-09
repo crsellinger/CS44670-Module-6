@@ -2,19 +2,19 @@
 
 Trains and saves a penguin species classifier.
 
-Author: Denise Case
-Date: 2026-06
+Author: caleb Sellinger
+Date: 2026-08-09
 
 Process:
-    - Load the penguins dataset.
+    - Load the Kaggle dataset.
     - Split into train and test sets.
     - Train a RandomForestClassifier.
     - Evaluate on held-out test data.
-    - Save the trained model to artifacts/model.joblib.
+    - Save the trained model to artifacts/csellinger_model.joblib.
 
 Terminal command to run this file from the root project folder:
 
-    uv run python -m mlstudio.model_builder_case
+    uv run python -m mlstudio.model_builder_csellinger
 
 OBS:
   Don't edit this file - it should remain a working example.
