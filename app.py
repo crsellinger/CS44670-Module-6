@@ -51,7 +51,6 @@ def root():
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
 <title>Fabricator Type Classifier</title>
 
 <style>
@@ -136,7 +135,6 @@ def root():
     }
 
 </style>
-```
 
 </head>
 
@@ -144,7 +142,7 @@ def root():
 
 <div class="container">
 
-```
+
 <h1>Fabricator Type Classifier</h1>
 
 
@@ -191,7 +189,7 @@ def root():
 <!-- ERROR BOX -->
 
 <div id="error"></div>
-```
+
 
 </div>
 
