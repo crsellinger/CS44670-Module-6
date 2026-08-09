@@ -116,6 +116,14 @@ Include:
 - How well you exercised the skills covered in this project: I think pretty well. There's still a lot I can do but I now know how to process a pipeline to build and serve a machine learning model.
 - What kinds of real problems you could apply these skills to in the future: This would be a great use for my non-profit organization to predict outcomes for new campaigns. Different development officers can use something like this to see possible outcomes for new campaigns or estimate donations for fund events.
 
+Links for my Hugging Face web interface are in the huggingface.md file, but for convenience they are listed here if you wanted to test:
+
+[Predictor App](https://huggingface.co/spaces/crsellinger/ml-Global-Semiconductor-predictor)
+
+[Repo Files](https://huggingface.co/spaces/crsellinger/ml-Global-Semiconductor-predictor/tree/main)
+
+[FastAPI Doc Test Area](https://crsellinger-ml-global-semiconductor-predictor.hf.space/docs)
+
 Display at least one image or screenshot showing your work.
 
 ![API Documentation Test](images/image.png)
