@@ -34,15 +34,17 @@ Describe your small technical modification to the example project.
 
 Include:
 
-- What you changed
-- Why you chose that change
-- How you verified that it worked
-- What result, output, chart, metric, or behavior confirmed the change
+- What you changed: Added my Kaggle dataset, instead of using penguins. Created my serve, model builder, and notebook code with appropriate changes to feature cols, target columns, necessary imports, and new model path. Updated load_data to clean my new dataset, dropping rows with 0 values and using the top 4 fab_types since I some classes were to small to stratify as they only appeared once or twice. Updated Section 5 of notebook with new feature columns and test values.
+- Why you chose that change: To get my custom project started.
+- How you verified that it worked: ran model builder, then serve, then ran notebook and verified output, no errors.
+- What result, output, chart, metric, or behavior confirmed the change: New dataset loaded correctly, trained new model artifact csellinger_model.joblib, and tested the serve core, which resulted in appropriate prediction and expected bad_payload output.
 
 Compared with the example project,
 explain what is different and why the change matters.
 
 Was it easy, or surprisingly challenging and why do you think so?
+
+Mostly easy, just had to be meticulous with all the code changes and where everything lived. Hardest part I had was fixing the stratify error as the error came out as followed: "he minimum number of groups for any class cannot be less than 2. Classes with too few members are: ['memory_HBM_packaging']" and I didn't realize the data I was looking at. I decided not to go with a non-stratified split, such as a KFold, and took the top 4 fab_types to get a large enough sample size for each class.
 
 ## Phase 5. Custom Project
 
