@@ -61,13 +61,13 @@ Then drag & drop from your repo (drag the whole folder from root):
 
 ## Public URLs
 
-- <https://crsellinger-ml-penguins-predictor.hf.space/predict>
-- <https://crsellinger-ml-penguins-predictor.hf.space/docs>
+- [Global Semiconductor Predictor](https://crsellinger-ml-global-semiconductor-predictor.hf.space)
+- <https://crsellinger-ml-global-semiconductor-predictor.hf.space/docs>
 
-For example:
-
-- <https://denisecase-ml-penguin-predictor.hf.space/predict>
-- <https://denisecase-ml-penguin-predictor.hf.space/docs>
+<!-- For example: -->
+<!-- Example links are erroring out, so commented them out to avoid link check error in GitHub>
+<!-- - <https://denisecase-ml-penguin-predictor.hf.space/predict>
+- <https://denisecase-ml-penguin-predictor.hf.space/docs> -->
 
 ## Testing Your Deployment
 
